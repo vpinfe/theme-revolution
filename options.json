@@ -1,0 +1,13 @@
+{
+  "title": "Revolution Options",
+  "description": "How Revolution starts.",
+  "options": [
+    {
+      "key": "startCollectionSelection",
+      "name": "Start on Collection Selection",
+      "description": "Open the collection picker when the theme starts, instead of the collection you last set.",
+      "type": "boolean",
+      "default": false
+    }
+  ]
+}

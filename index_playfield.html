@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VPinFE - Revolution</title>
+  <link rel="stylesheet" href="/core/common/vpinfe-style.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="/core/common/vpinfe-core.js"></script>
+</head>
+<body>
+  <main class="stage vpinfe-upright" data-view="tables">
+    <div class="panel">
+
+      <!-- Seven cards, five of them in view. theme.js builds them once and refills them on every move. -->
+      <nav class="wheel" aria-label="Tables">
+        <ol id="track" class="track"></ol>
+      </nav>
+
+      <section id="selection" class="detail">
+        <header class="title">
+          <img id="cab" class="cab" alt="" hidden />
+          <div class="heading">
+            <p id="eyebrow" class="eyebrow"></p>
+            <h1 id="name"></h1>
+            <p id="meta" class="meta"></p>
+          </div>
+        </header>
+
+        <div class="hero">
+          <!-- Core fills this with the playfield video or picture. -->
+          <div id="art" data-vpin-media="playfield"></div>
+          <img id="collection-art" src="img/collection_background.png" alt="" />
+        </div>
+
+        <div class="sections">
+          <section id="features-section" class="tags-section">
+            <h2 id="features-heading"></h2>
+            <ul id="features" class="tags"></ul>
+          </section>
+          <section id="addons-section" class="tags-section">
+            <h2 id="addons-heading"></h2>
+            <ul id="addons" class="tags"></ul>
+          </section>
+        </div>
+      </section>
+
+      <p id="empty" class="empty" hidden></p>
+    </div>
+  </main>
+
+  <div id="overlay-root"></div>
+
+  <script src="theme.js"></script>
+</body>
+</html>
