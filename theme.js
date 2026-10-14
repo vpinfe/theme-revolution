@@ -146,7 +146,7 @@ function drawSelection(list) {
   emptyEl.hidden = !empty;
   emptyEl.textContent = vpin.t("frontend.theme.no_tables_found", "No tables found");
   document.getElementById("features-heading").textContent =
-    vpin.t("frontend.theme.detected_features", "Features");
+    vpin.t("frontend.theme.detected_features", "Detected Features");
   document.getElementById("addons-heading").textContent = "Add-ons";
   document.getElementById("selection").hidden = empty;
   if (empty) return;
@@ -188,8 +188,9 @@ function drawTable(entry, index) {
 function drawCollection(row) {
   nameEl.textContent = row.label;
   eyebrowEl.textContent = row.is_filter ? "Filter collection" : "Collection";
-  metaEl.textContent = `${row.table_count} ${row.table_count === 1 ? "Table" : "Tables"}`;
-  metaEl.hidden = false;
+  const count = row.table_count;
+  metaEl.textContent = Number.isFinite(count) ? `${count} ${count === 1 ? "Table" : "Tables"}` : "";
+  metaEl.hidden = !metaEl.textContent;
   cabEl.hidden = true;
 }
 
