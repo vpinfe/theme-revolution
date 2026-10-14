@@ -23,6 +23,7 @@ async function start() {
   }).observe(artEl, { childList: true });
 
   await vpin.ready;                  // the tables, the options and the layout are in
+  document.querySelector("nav.wheel").setAttribute("aria-label", vpin.t("theme.tables_label", "Tables"));
 
   // Input. Core moves the wheel, pages it and opens the menu and the collection picker.
   // Select is the one action it leaves to a theme.
@@ -147,7 +148,7 @@ function drawSelection(list) {
   emptyEl.textContent = vpin.t("frontend.theme.no_tables_found", "No tables found");
   document.getElementById("features-heading").textContent =
     vpin.t("frontend.theme.detected_features", "Detected Features");
-  document.getElementById("addons-heading").textContent = "Add-ons";
+  document.getElementById("addons-heading").textContent = vpin.t("theme.add_ons", "Add-ons");
   document.getElementById("selection").hidden = empty;
   if (empty) return;
 
@@ -187,9 +188,13 @@ function drawTable(entry, index) {
 
 function drawCollection(row) {
   nameEl.textContent = row.label;
-  eyebrowEl.textContent = row.is_filter ? "Filter collection" : "Collection";
+  eyebrowEl.textContent = row.is_filter
+    ? vpin.t("theme.filter_collection", "Filter collection")
+    : vpin.t("theme.collection", "Collection");
   const count = row.table_count;
-  metaEl.textContent = Number.isFinite(count) ? `${count} ${count === 1 ? "Table" : "Tables"}` : "";
+  metaEl.textContent = Number.isFinite(count)
+    ? vpin.t("theme.tables", { one: "{count} Table", other: "{count} Tables" }, { count })
+    : "";
   metaEl.hidden = !metaEl.textContent;
   cabEl.hidden = true;
 }

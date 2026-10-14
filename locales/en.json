@@ -1,0 +1,10 @@
+{
+  "tables_label": "Tables",
+  "add_ons": "Add-ons",
+  "collection": "Collection",
+  "filter_collection": "Filter collection",
+  "tables": {
+    "one": "{count} Table",
+    "other": "{count} Tables"
+  }
+}

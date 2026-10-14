@@ -18,6 +18,7 @@ options.json          the options a person can change, with their defaults
 index_playfield.html  the playfield page
 style.css             the look
 theme.js              the behavior
+locales/en.json       the theme's own words; add <language>.json to translate them
 img/                  collection_background.png, the picture the picker shows
 preview.png           shown in the theme list
 ```
